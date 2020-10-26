@@ -42,12 +42,7 @@ function(configure_python_c_extension_library _library_name)
   endif()
 
   target_link_libraries(${_library_name}
-    ${PythonExtra_LIBRARIES}
-  )
-
-  target_include_directories(${_library_name}
-    PUBLIC
-    ${PythonExtra_INCLUDE_DIRS}
+    PythonExtra::Extension
   )
 
   install(TARGETS ${_library_name}
